@@ -16,16 +16,15 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnRandomFruit", 2.0f, 2.0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void SpawnRandomFruit()
     {
         int fruitIndex = Random.Range(0, fruit.Length);
         Vector3 randomPosition = new Vector3(Random.Range(-xBounds, xBounds), yBounds, zBounds);
         Instantiate(fruit[fruitIndex], randomPosition, transform.rotation);
+    }
+
+    public void GameOver()
+    {
+        CancelInvoke("SpawnRandomFruit");
     }
 }
