@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class Apple : Fruit
 {
     private float appleRotTime = 15.0f;
     private float appleMass = 3.0f;
 
+    // POLYMORPHISM
     protected override void Rotting()
     {
         if (appleRotTime <= 0)

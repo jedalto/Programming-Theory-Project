@@ -6,9 +6,13 @@ using UnityEngine;
 public class Fruit : MonoBehaviour
 {
     private float lowerBounds = -4.0f;
+
+    // ENCAPSULATION
     public string fruitName { get; set; }
     private Renderer fruitRenderer;
     private Rigidbody rb;
+
+    // ENCAPSULATION
     public float fruitMass { get; set; } = 1.0f;
     private bool isCaught = false;
     private float rotTime = 10.0f;
@@ -33,12 +37,15 @@ public class Fruit : MonoBehaviour
             Rotting();
     }
 
+
+    // ABSTRACTION
     void CheckLowerBounds()
     {
         if (transform.position.y < lowerBounds)
             Destroy(gameObject);
     }
 
+    // ABSTRACTION
     protected virtual void Rotting()
     {
         if (rotTime <= 0)
@@ -81,6 +88,7 @@ public class Fruit : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     void DetermineFruitName()
     {
         if (gameObject.CompareTag("Pear"))

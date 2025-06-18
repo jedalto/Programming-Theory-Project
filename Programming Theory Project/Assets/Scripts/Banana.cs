@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class Banana : Fruit
 {
     private float bananaRotTime = 7.0f;
     private float bananaMass = 3.0f;
 
+    // POLYMORPHISM
     protected override void Rotting()
     {
         if (bananaRotTime <= 0)
